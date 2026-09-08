@@ -21,6 +21,15 @@ export interface ManagementNote {
     createdAt: string;
 }
 
+// Status History audit trail structure (Phase 6 requirement)
+export interface StatusHistoryEntry {
+    id: string;
+    oldStatus: Status | null;
+    newStatus: Status;
+    changedBy: string;
+    changedAt: string;
+}
+
 // Main Issue model containing all 7 required fields + notes & follow-up
 export interface OperationalIssue {
     id: string;
@@ -30,11 +39,14 @@ export interface OperationalIssue {
     shortDescription: string;
     detailedDescription?: string;
     dateReported: string;        // e.g. "2026-09-02"
+    dateResolved?: string | null;
     priority: Priority;
     status: Status;
     assignedManager: string;
+    assignedManagerId?: number | null;
     requiresFollowUp: boolean;   // Summary requirement ke liye
     notes: ManagementNote[];
+    statusHistory?: StatusHistoryEntry[];
 }
 
 // Filters state

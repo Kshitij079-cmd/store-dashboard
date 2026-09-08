@@ -80,12 +80,14 @@ const defaultMetrics: DashboardMetrics = {
 };
 
 const DEFAULT_MANAGERS = [
-  { managerId: 1, fullName: 'Sarah Jenkins (Duty Manager)' },
-  { managerId: 2, fullName: 'Marcus Vance (Store Manager)' },
-  { managerId: 3, fullName: 'Priya Sharma (Area Lead)' },
-  { managerId: 4, fullName: 'Alex Rivera (Duty Manager)' },
-  { managerId: 5, fullName: 'Emily Chen (Operations Manager)' },
-  { managerId: 6, fullName: 'David Chen (Facility Tech Lead)' },
+  { managerId: 1, fullName: 'Rohan Sharma (Duty Manager)' },
+  { managerId: 2, fullName: 'Ananya Verma (Duty Manager)' },
+  { managerId: 3, fullName: 'Kabir Mehta (Duty Manager)' },
+  { managerId: 4, fullName: 'Sarah Jenkins (Duty Manager)' },
+  { managerId: 5, fullName: 'Marcus Vance (Store Manager)' },
+  { managerId: 6, fullName: 'Priya Sharma (Area Lead)' },
+  { managerId: 7, fullName: 'Alex Rivera (Duty Manager)' },
+  { managerId: 8, fullName: 'Emily Chen (Operations Manager)' },
 ];
 
 const IssuesContext = createContext<IssuesContextType | undefined>(undefined);

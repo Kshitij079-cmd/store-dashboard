@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { useIssues } from '@/context/issues-context';
-import { LayoutDashboard, Database, RefreshCw, UserCheck } from 'lucide-react';
+import { LayoutDashboard, Database, RefreshCw, UserCheck, Plus } from 'lucide-react';
 
 export function DashboardHeader() {
-  const { isBackendOnline, isLoading, refresh } = useIssues();
+  const { isBackendOnline, isLoading, refresh, setIsCreateModalOpen } = useIssues();
 
   return (
     <header className="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 sticky top-0 z-20">
@@ -32,6 +32,15 @@ export function DashboardHeader() {
 
         {/* Right Info & Actions */}
         <div className="flex items-center gap-3 self-end sm:self-auto">
+          {/* Phase 9: Report Issue Action Button */}
+          <button
+            onClick={() => setIsCreateModalOpen(true)}
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-sm transition-colors cursor-pointer"
+          >
+            <Plus className="w-3.5 h-3.5" />
+            <span>Report Issue</span>
+          </button>
+
           {/* Database Connection Status */}
           <div
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-medium ${

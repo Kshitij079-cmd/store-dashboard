@@ -19,6 +19,7 @@ export function FilterBar() {
     filters.category !== 'All' ||
     filters.priority !== 'All' ||
     filters.status !== 'All' ||
+    Boolean(filters.followUp) ||
     filters.searchQuery.trim() !== '';
 
   return (
@@ -110,6 +111,7 @@ export function FilterBar() {
               className="w-full text-xs bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-1.5 text-slate-800 dark:text-slate-200 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               <option value="All">All Statuses</option>
+              <option value="New,In Progress">Open (New & In Progress)</option>
               <option value="New">New</option>
               <option value="In Progress">In Progress</option>
               <option value="Resolved">Resolved</option>
@@ -164,11 +166,24 @@ export function FilterBar() {
 
           {filters.status !== 'All' && (
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-sky-50 text-sky-700 dark:bg-sky-950/60 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
-              Status: {filters.status}
+              Status: {filters.status === 'New,In Progress' ? 'Open' : filters.status}
               <button
                 onClick={() => setFilter('status', 'All')}
                 className="hover:text-sky-900 dark:hover:text-white"
                 title="Remove Status filter"
+              >
+                <X className="w-3 h-3" />
+              </button>
+            </span>
+          )}
+
+          {filters.followUp && (
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700 dark:bg-amber-950/60 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
+              Needs Follow-up (&gt;3 days stale)
+              <button
+                onClick={() => setFilter('followUp', false)}
+                className="hover:text-amber-900 dark:hover:text-white"
+                title="Remove Follow-up filter"
               >
                 <X className="w-3 h-3" />
               </button>

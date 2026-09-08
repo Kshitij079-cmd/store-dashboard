@@ -49,19 +49,23 @@ export interface OperationalIssue {
     statusHistory?: StatusHistoryEntry[];
 }
 
-// Filters state
+// Filters state (Phase 5 & 8: Multi-criteria + Follow-up)
 export interface IssueFilterState {
     store: string;      // 'All' or specific store
     category: string;   // 'All' or specific category
     priority: string;   // 'All' or specific priority
     status: string;     // 'All' or specific status
     searchQuery: string;
+    followUp?: boolean; // Phase 8: status = 'In Progress' AND updated_at < now() - 3 days
 }
 
-// Top KPI summary metrics
+// Top KPI summary metrics (Phase 8 PDF Contract: open, high_priority, resolved, follow_up)
 export interface DashboardMetrics {
+    open: number;
+    high_priority: number;
+    resolved: number;
+    follow_up: number;
     totalOpen: number;
     highPriority: number;
-    resolved: number;
     requiresFollowUp: number;
 }

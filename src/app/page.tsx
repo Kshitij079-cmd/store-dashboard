@@ -7,6 +7,8 @@ import { MetricsSummary } from '@/components/dashboard/metrics-summary';
 import { FilterBar } from '@/components/dashboard/filter-bar';
 import { IssuesTable } from '@/components/dashboard/issues-table';
 import { IssueDetailModal } from '@/components/dashboard/issue-detail-modal';
+import { CreateIssueModal } from '@/components/dashboard/create-issue-modal';
+import { Toast } from '@/components/ui/toast';
 
 function DashboardContent() {
   return (
@@ -25,6 +27,12 @@ function DashboardContent() {
 
         {/* 4. Issue Detail & Action Modal */}
         <IssueDetailModal />
+
+        {/* 5. Phase 9: Report Issue Modal */}
+        <CreateIssueModal />
+
+        {/* 6. Phase 9: Feedback Toast */}
+        <Toast />
       </main>
 
       <footer className="border-t border-slate-200 dark:border-slate-800 py-4 text-center text-xs text-slate-400">

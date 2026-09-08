@@ -20,7 +20,7 @@ type SortColumn = 'store' | 'category' | 'shortDescription' | 'dateReported' | '
 type SortOrder = 'asc' | 'desc';
 
 export function IssuesTable() {
-  const { issues, setSelectedIssueId, resetFilters } = useIssues();
+  const { issues, setSelectedIssueId, resetFilters, isLoading, setIsCreateModalOpen } = useIssues();
 
   // Phase 5: Column Sorting State
   const [sortColumn, setSortColumn] = useState<SortColumn>('dateReported');
@@ -109,6 +109,36 @@ export function IssuesTable() {
     );
   };
 
+  // Phase 9 Polish: Sleek skeleton loader while fetching data
+  if (isLoading) {
+    return (
+      <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+        <div className="p-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+          <div className="h-4 w-36 bg-slate-200 dark:bg-slate-800 rounded animate-pulse" />
+          <div className="h-4 w-24 bg-slate-200 dark:bg-slate-800 rounded animate-pulse" />
+        </div>
+        <div className="divide-y divide-slate-100 dark:border-slate-800">
+          {[1, 2, 3, 4, 5].map((i) => (
+            <div key={i} className="p-4 flex items-center justify-between gap-4 animate-pulse">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-800 shrink-0" />
+                <div className="space-y-1.5">
+                  <div className="h-3.5 w-24 bg-slate-200 dark:bg-slate-800 rounded" />
+                  <div className="h-2.5 w-16 bg-slate-100 dark:bg-slate-800/60 rounded" />
+                </div>
+              </div>
+              <div className="h-3.5 w-52 bg-slate-200 dark:bg-slate-800 rounded hidden md:block" />
+              <div className="h-5 w-16 bg-slate-200 dark:bg-slate-800 rounded-full" />
+              <div className="h-5 w-20 bg-slate-200 dark:bg-slate-800 rounded-full" />
+              <div className="h-4 w-14 bg-slate-200 dark:bg-slate-800 rounded" />
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Phase 9 Polish: Engaging Empty State with Reset and Create Issue buttons
   if (issues.length === 0) {
     return (
       <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-12 text-center space-y-3 shadow-sm">
@@ -119,14 +149,22 @@ export function IssuesTable() {
           No operational issues found
         </h3>
         <p className="text-xs text-slate-500 max-w-sm mx-auto">
-          No issues match the selected combination of store, category, priority, or status filters.
+          No issues match the selected combination of store, category, priority, status, or search query.
         </p>
-        <button
-          onClick={resetFilters}
-          className="mt-2 text-xs font-semibold px-4 py-2 rounded-xl bg-indigo-50 text-indigo-700 hover:bg-indigo-100 dark:bg-indigo-950/60 dark:text-indigo-300 transition-colors"
-        >
-          Reset All Filters
-        </button>
+        <div className="flex items-center justify-center gap-3 pt-2">
+          <button
+            onClick={resetFilters}
+            className="text-xs font-semibold px-4 py-2 rounded-xl bg-indigo-50 text-indigo-700 hover:bg-indigo-100 dark:bg-indigo-950/60 dark:text-indigo-300 transition-colors cursor-pointer"
+          >
+            Reset All Filters
+          </button>
+          <button
+            onClick={() => setIsCreateModalOpen(true)}
+            className="text-xs font-semibold px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 transition-colors cursor-pointer"
+          >
+            + Report New Issue
+          </button>
+        </div>
       </div>
     );
   }

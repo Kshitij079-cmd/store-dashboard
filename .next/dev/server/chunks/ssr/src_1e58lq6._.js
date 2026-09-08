@@ -107,7 +107,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 function FilterBar() {
     const { filters, setFilter, resetFilters, availableStores, availableCategories, issues } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$issues$2d$context$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useIssues"])();
-    const isFiltered = filters.store !== 'All' || filters.category !== 'All' || filters.priority !== 'All' || filters.status !== 'All' || filters.searchQuery.trim() !== '';
+    const isFiltered = filters.store !== 'All' || filters.category !== 'All' || filters.priority !== 'All' || filters.status !== 'All' || Boolean(filters.followUp) || filters.searchQuery.trim() !== '';
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4 shadow-sm space-y-3",
         children: [
@@ -121,7 +121,7 @@ function FilterBar() {
                                 className: "w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                lineNumber: 29,
+                                lineNumber: 30,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -132,7 +132,7 @@ function FilterBar() {
                                 className: "w-full pl-10 pr-8 py-2 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                lineNumber: 30,
+                                lineNumber: 31,
                                 columnNumber: 11
                             }, this),
                             filters.searchQuery && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -141,13 +141,13 @@ function FilterBar() {
                                 children: "✕"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                lineNumber: 38,
+                                lineNumber: 39,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                        lineNumber: 28,
+                        lineNumber: 29,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -160,7 +160,7 @@ function FilterBar() {
                                         children: "Store"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                        lineNumber: 51,
+                                        lineNumber: 52,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -172,18 +172,18 @@ function FilterBar() {
                                                 children: store === 'All' ? 'All Stores' : store
                                             }, store, false, {
                                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                                lineNumber: 60,
+                                                lineNumber: 61,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                        lineNumber: 54,
+                                        lineNumber: 55,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                lineNumber: 50,
+                                lineNumber: 51,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -193,7 +193,7 @@ function FilterBar() {
                                         children: "Category"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                        lineNumber: 69,
+                                        lineNumber: 70,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -205,18 +205,18 @@ function FilterBar() {
                                                 children: cat === 'All' ? 'All Categories' : cat
                                             }, cat, false, {
                                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                                lineNumber: 78,
+                                                lineNumber: 79,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                        lineNumber: 72,
+                                        lineNumber: 73,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                lineNumber: 68,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -226,7 +226,7 @@ function FilterBar() {
                                         children: "Priority"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                        lineNumber: 87,
+                                        lineNumber: 88,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -239,7 +239,7 @@ function FilterBar() {
                                                 children: "All Priorities"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                                lineNumber: 95,
+                                                lineNumber: 96,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -247,7 +247,7 @@ function FilterBar() {
                                                 children: "High / Critical"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                                lineNumber: 96,
+                                                lineNumber: 97,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -255,7 +255,7 @@ function FilterBar() {
                                                 children: "Medium"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                                lineNumber: 97,
+                                                lineNumber: 98,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -263,19 +263,19 @@ function FilterBar() {
                                                 children: "Low"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                                lineNumber: 98,
+                                                lineNumber: 99,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                        lineNumber: 90,
+                                        lineNumber: 91,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                lineNumber: 86,
+                                lineNumber: 87,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -285,7 +285,7 @@ function FilterBar() {
                                         children: "Status"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                        lineNumber: 104,
+                                        lineNumber: 105,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -298,7 +298,7 @@ function FilterBar() {
                                                 children: "All Statuses"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                                lineNumber: 112,
+                                                lineNumber: 113,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -306,7 +306,7 @@ function FilterBar() {
                                                 children: "New"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                                lineNumber: 113,
+                                                lineNumber: 114,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -314,7 +314,7 @@ function FilterBar() {
                                                 children: "In Progress"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                                lineNumber: 114,
+                                                lineNumber: 115,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -322,31 +322,31 @@ function FilterBar() {
                                                 children: "Resolved"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                                lineNumber: 115,
+                                                lineNumber: 116,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                        lineNumber: 107,
+                                        lineNumber: 108,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                lineNumber: 103,
+                                lineNumber: 104,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                        lineNumber: 48,
+                        lineNumber: 49,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                lineNumber: 26,
+                lineNumber: 27,
                 columnNumber: 7
             }, this),
             isFiltered && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -357,7 +357,7 @@ function FilterBar() {
                         children: "Active Filters:"
                     }, void 0, false, {
                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                        lineNumber: 124,
+                        lineNumber: 125,
                         columnNumber: 11
                     }, this),
                     filters.store !== 'All' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -373,18 +373,18 @@ function FilterBar() {
                                     className: "w-3 h-3"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                    lineNumber: 134,
+                                    lineNumber: 135,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                lineNumber: 129,
+                                lineNumber: 130,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                        lineNumber: 127,
+                        lineNumber: 128,
                         columnNumber: 13
                     }, this),
                     filters.category !== 'All' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -400,18 +400,18 @@ function FilterBar() {
                                     className: "w-3 h-3"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                    lineNumber: 147,
+                                    lineNumber: 148,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                lineNumber: 142,
+                                lineNumber: 143,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                        lineNumber: 140,
+                        lineNumber: 141,
                         columnNumber: 13
                     }, this),
                     filters.priority !== 'All' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -427,18 +427,18 @@ function FilterBar() {
                                     className: "w-3 h-3"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                    lineNumber: 160,
+                                    lineNumber: 161,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                lineNumber: 155,
+                                lineNumber: 156,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                        lineNumber: 153,
+                        lineNumber: 154,
                         columnNumber: 13
                     }, this),
                     filters.status !== 'All' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -454,18 +454,44 @@ function FilterBar() {
                                     className: "w-3 h-3"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                    lineNumber: 173,
+                                    lineNumber: 174,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                lineNumber: 168,
+                                lineNumber: 169,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                        lineNumber: 166,
+                        lineNumber: 167,
+                        columnNumber: 13
+                    }, this),
+                    filters.followUp && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700 dark:bg-amber-950/60 dark:text-amber-300 border border-amber-200 dark:border-amber-800",
+                        children: [
+                            "Needs Follow-up (>3 days stale)",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>setFilter('followUp', false),
+                                className: "hover:text-amber-900 dark:hover:text-white",
+                                title: "Remove Follow-up filter",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                                    className: "w-3 h-3"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/dashboard/filter-bar.tsx",
+                                    lineNumber: 187,
+                                    columnNumber: 17
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/dashboard/filter-bar.tsx",
+                                lineNumber: 182,
+                                columnNumber: 15
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/dashboard/filter-bar.tsx",
+                        lineNumber: 180,
                         columnNumber: 13
                     }, this),
                     filters.searchQuery.trim() !== '' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -482,18 +508,18 @@ function FilterBar() {
                                     className: "w-3 h-3"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                    lineNumber: 186,
+                                    lineNumber: 200,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                lineNumber: 181,
+                                lineNumber: 195,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                        lineNumber: 179,
+                        lineNumber: 193,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -504,26 +530,26 @@ function FilterBar() {
                                 className: "w-3 h-3"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                lineNumber: 195,
+                                lineNumber: 209,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: "Clear All"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                lineNumber: 196,
+                                lineNumber: 210,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                        lineNumber: 191,
+                        lineNumber: 205,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                lineNumber: 123,
+                lineNumber: 124,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -535,7 +561,7 @@ function FilterBar() {
                             className: "w-3.5 h-3.5 text-indigo-500"
                         }, void 0, false, {
                             fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                            lineNumber: 204,
+                            lineNumber: 218,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -546,31 +572,31 @@ function FilterBar() {
                                     children: issues.length
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                                    lineNumber: 206,
+                                    lineNumber: 220,
                                     columnNumber: 21
                                 }, this),
                                 " matching issues"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                            lineNumber: 205,
+                            lineNumber: 219,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                    lineNumber: 203,
+                    lineNumber: 217,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-                lineNumber: 202,
+                lineNumber: 216,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/dashboard/filter-bar.tsx",
-        lineNumber: 25,
+        lineNumber: 26,
         columnNumber: 5
     }, this);
 }
@@ -588,12 +614,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/database.mjs [app-ssr] (ecmascript) <export default as Database>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$refresh$2d$cw$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__RefreshCw$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/refresh-cw.mjs [app-ssr] (ecmascript) <export default as RefreshCw>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$check$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__UserCheck$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/user-check.mjs [app-ssr] (ecmascript) <export default as UserCheck>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/plus.mjs [app-ssr] (ecmascript) <export default as Plus>");
 'use client';
 ;
 ;
 ;
 function DashboardHeader() {
-    const { isBackendOnline, isLoading, refresh } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$issues$2d$context$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useIssues"])();
+    const { isBackendOnline, isLoading, refresh, setIsCreateModalOpen } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$issues$2d$context$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useIssues"])();
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
         className: "border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 sticky top-0 z-20",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -666,6 +693,30 @@ function DashboardHeader() {
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "flex items-center gap-3 self-end sm:self-auto",
                     children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            onClick: ()=>setIsCreateModalOpen(true),
+                            className: "flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-sm transition-colors cursor-pointer",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
+                                    className: "w-3.5 h-3.5"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/dashboard/header.tsx",
+                                    lineNumber: 40,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: "Report Issue"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/dashboard/header.tsx",
+                                    lineNumber: 41,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/dashboard/header.tsx",
+                            lineNumber: 36,
+                            columnNumber: 11
+                        }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: `flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-medium ${isBackendOnline ? 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800' : 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:border-amber-800'}`,
                             children: [
@@ -673,20 +724,20 @@ function DashboardHeader() {
                                     className: "w-3.5 h-3.5"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/header.tsx",
-                                    lineNumber: 43,
+                                    lineNumber: 52,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: isBackendOnline ? 'PostgreSQL Live (:5435)' : 'Local Demo Mode'
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/header.tsx",
-                                    lineNumber: 44,
+                                    lineNumber: 53,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/dashboard/header.tsx",
-                            lineNumber: 36,
+                            lineNumber: 45,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -699,7 +750,7 @@ function DashboardHeader() {
                                     className: `w-3.5 h-3.5 ${isLoading ? 'animate-spin text-indigo-600' : ''}`
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/header.tsx",
-                                    lineNumber: 54,
+                                    lineNumber: 63,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -707,13 +758,13 @@ function DashboardHeader() {
                                     children: "Refresh"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/header.tsx",
-                                    lineNumber: 55,
+                                    lineNumber: 64,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/dashboard/header.tsx",
-                            lineNumber: 48,
+                            lineNumber: 57,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -725,12 +776,12 @@ function DashboardHeader() {
                                         className: "w-4 h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/dashboard/header.tsx",
-                                        lineNumber: 61,
+                                        lineNumber: 70,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/header.tsx",
-                                    lineNumber: 60,
+                                    lineNumber: 69,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -741,7 +792,7 @@ function DashboardHeader() {
                                             children: "Duty Manager"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/dashboard/header.tsx",
-                                            lineNumber: 64,
+                                            lineNumber: 73,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -749,19 +800,19 @@ function DashboardHeader() {
                                             children: "Regional Ops Lead"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/dashboard/header.tsx",
-                                            lineNumber: 67,
+                                            lineNumber: 76,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/dashboard/header.tsx",
-                                    lineNumber: 63,
+                                    lineNumber: 72,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/dashboard/header.tsx",
-                            lineNumber: 59,
+                            lineNumber: 68,
                             columnNumber: 11
                         }, this)
                     ]
@@ -807,6 +858,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.mjs [app-ssr] (ecmascript) <export default as ArrowRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheck$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/shield-check.mjs [app-ssr] (ecmascript) <export default as ShieldCheck>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/check.mjs [app-ssr] (ecmascript) <export default as Check>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trash$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Trash2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/trash.mjs [app-ssr] (ecmascript) <export default as Trash2>");
 'use client';
 ;
 ;
@@ -814,11 +866,12 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 function IssueDetailModal() {
-    const { selectedIssue, setSelectedIssueId, handleStatusChange, handleAddNote, availableManagers } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$issues$2d$context$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useIssues"])();
+    const { selectedIssue, setSelectedIssueId, handleStatusChange, handleAddNote, handleDeleteNote, availableManagers } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$issues$2d$context$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useIssues"])();
     const [noteText, setNoteText] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [isSubmittingNote, setIsSubmittingNote] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isUpdatingStatus, setIsUpdatingStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [selectedManagerId, setSelectedManagerId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [noteAuthorId, setNoteAuthorId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     if (!selectedIssue) return null;
     const statuses = [
         'New',
@@ -836,10 +889,11 @@ function IssueDetailModal() {
     };
     const onAddNoteSubmit = async (e)=>{
         e.preventDefault();
-        if (!noteText.trim()) return;
+        const trimmed = noteText.trim();
+        if (!trimmed || trimmed.length > 500) return;
         setIsSubmittingNote(true);
         try {
-            await handleAddNote(selectedIssue.id, noteText.trim());
+            await handleAddNote(selectedIssue.id, trimmed, noteAuthorId);
             setNoteText('');
         } finally{
             setIsSubmittingNote(false);
@@ -863,7 +917,7 @@ function IssueDetailModal() {
                                     children: selectedIssue.id
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 76,
+                                    lineNumber: 80,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -871,13 +925,13 @@ function IssueDetailModal() {
                                     children: selectedIssue.category
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 79,
+                                    lineNumber: 83,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                            lineNumber: 75,
+                            lineNumber: 79,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -887,18 +941,18 @@ function IssueDetailModal() {
                                 className: "w-5 h-5"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                lineNumber: 88,
+                                lineNumber: 92,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                            lineNumber: 84,
+                            lineNumber: 88,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                    lineNumber: 74,
+                    lineNumber: 78,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -911,7 +965,7 @@ function IssueDetailModal() {
                                     children: selectedIssue.shortDescription
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 96,
+                                    lineNumber: 100,
                                     columnNumber: 13
                                 }, this),
                                 selectedIssue.detailedDescription && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -919,13 +973,13 @@ function IssueDetailModal() {
                                     children: selectedIssue.detailedDescription
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 100,
+                                    lineNumber: 104,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                            lineNumber: 95,
+                            lineNumber: 99,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -941,20 +995,20 @@ function IssueDetailModal() {
                                                     className: "w-3.5 h-3.5 text-indigo-500"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 110,
+                                                    lineNumber: 114,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Status Management"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 111,
+                                                    lineNumber: 115,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 109,
+                                            lineNumber: 113,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -965,7 +1019,7 @@ function IssueDetailModal() {
                                                     children: "Dropdown:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 116,
+                                                    lineNumber: 120,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -979,24 +1033,24 @@ function IssueDetailModal() {
                                                             children: st
                                                         }, st, false, {
                                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                            lineNumber: 125,
+                                                            lineNumber: 129,
                                                             columnNumber: 21
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 117,
+                                                    lineNumber: 121,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 115,
+                                            lineNumber: 119,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 108,
+                                    lineNumber: 112,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1012,47 +1066,47 @@ function IssueDetailModal() {
                                                     className: "w-3.5 h-3.5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 152,
+                                                    lineNumber: 156,
                                                     columnNumber: 43
                                                 }, this),
                                                 st === 'In Progress' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
                                                     className: "w-3.5 h-3.5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 153,
+                                                    lineNumber: 157,
                                                     columnNumber: 46
                                                 }, this),
                                                 st === 'New' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     className: "w-2 h-2 rounded-full bg-sky-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 154,
+                                                    lineNumber: 158,
                                                     columnNumber: 38
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: st
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 155,
+                                                    lineNumber: 159,
                                                     columnNumber: 21
                                                 }, this),
                                                 isActive && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__["Check"], {
                                                     className: "w-3 h-3 ml-0.5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 156,
+                                                    lineNumber: 160,
                                                     columnNumber: 34
                                                 }, this)
                                             ]
                                         }, st, true, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 138,
+                                            lineNumber: 142,
                                             columnNumber: 19
                                         }, this);
                                     })
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 134,
+                                    lineNumber: 138,
                                     columnNumber: 13
                                 }, this),
                                 availableManagers.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1065,20 +1119,20 @@ function IssueDetailModal() {
                                                     className: "w-3 h-3 text-slate-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 166,
+                                                    lineNumber: 170,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Changed By (Audit Author):"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 167,
+                                                    lineNumber: 171,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 165,
+                                            lineNumber: 169,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1096,7 +1150,7 @@ function IssueDetailModal() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 175,
+                                                    lineNumber: 179,
                                                     columnNumber: 19
                                                 }, this),
                                                 availableManagers.map((m)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1104,25 +1158,25 @@ function IssueDetailModal() {
                                                         children: m.fullName
                                                     }, m.managerId, false, {
                                                         fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                        lineNumber: 177,
+                                                        lineNumber: 181,
                                                         columnNumber: 21
                                                     }, this))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 169,
+                                            lineNumber: 173,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 164,
+                                    lineNumber: 168,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                            lineNumber: 107,
+                            lineNumber: 111,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1135,7 +1189,7 @@ function IssueDetailModal() {
                                             children: "Store Location"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 189,
+                                            lineNumber: 193,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1145,20 +1199,20 @@ function IssueDetailModal() {
                                                     className: "w-3.5 h-3.5 text-slate-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 191,
+                                                    lineNumber: 195,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: selectedIssue.storeNumber
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 192,
+                                                    lineNumber: 196,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 190,
+                                            lineNumber: 194,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1166,13 +1220,13 @@ function IssueDetailModal() {
                                             children: selectedIssue.storeName
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 194,
+                                            lineNumber: 198,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 188,
+                                    lineNumber: 192,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1182,7 +1236,7 @@ function IssueDetailModal() {
                                             children: "Date Reported"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 198,
+                                            lineNumber: 202,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1192,20 +1246,20 @@ function IssueDetailModal() {
                                                     className: "w-3.5 h-3.5 text-slate-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 200,
+                                                    lineNumber: 204,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: selectedIssue.dateReported
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 201,
+                                                    lineNumber: 205,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 199,
+                                            lineNumber: 203,
                                             columnNumber: 15
                                         }, this),
                                         selectedIssue.dateResolved && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1215,7 +1269,7 @@ function IssueDetailModal() {
                                                     className: "w-3 h-3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 205,
+                                                    lineNumber: 209,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1225,19 +1279,19 @@ function IssueDetailModal() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 206,
+                                                    lineNumber: 210,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 204,
+                                            lineNumber: 208,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 197,
+                                    lineNumber: 201,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1247,7 +1301,7 @@ function IssueDetailModal() {
                                             children: "Priority"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 212,
+                                            lineNumber: 216,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1256,18 +1310,18 @@ function IssueDetailModal() {
                                                 priority: selectedIssue.priority
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                lineNumber: 214,
+                                                lineNumber: 218,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 213,
+                                            lineNumber: 217,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 211,
+                                    lineNumber: 215,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1277,7 +1331,7 @@ function IssueDetailModal() {
                                             children: "Assigned Lead"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 219,
+                                            lineNumber: 223,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1287,32 +1341,32 @@ function IssueDetailModal() {
                                                     className: "w-3.5 h-3.5 text-slate-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 221,
+                                                    lineNumber: 225,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: selectedIssue.assignedManager
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 222,
+                                                    lineNumber: 226,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 220,
+                                            lineNumber: 224,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 218,
+                                    lineNumber: 222,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                            lineNumber: 187,
+                            lineNumber: 191,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1327,7 +1381,7 @@ function IssueDetailModal() {
                                                 className: "w-3.5 h-3.5 text-indigo-500"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                lineNumber: 231,
+                                                lineNumber: 235,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1338,18 +1392,18 @@ function IssueDetailModal() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                lineNumber: 232,
+                                                lineNumber: 236,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                        lineNumber: 230,
+                                        lineNumber: 234,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 229,
+                                    lineNumber: 233,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1366,40 +1420,40 @@ function IssueDetailModal() {
                                                                     status: entry.oldStatus
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                                    lineNumber: 246,
+                                                                    lineNumber: 250,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                                                     className: "w-3 h-3 text-slate-400 shrink-0"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                                    lineNumber: 247,
+                                                                    lineNumber: 251,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                            lineNumber: 245,
+                                                            lineNumber: 249,
                                                             columnNumber: 25
                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             className: "text-[11px] text-slate-400 italic",
                                                             children: "Initial"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                            lineNumber: 250,
+                                                            lineNumber: 254,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["StatusBadge"], {
                                                             status: entry.newStatus
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                            lineNumber: 252,
+                                                            lineNumber: 256,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 243,
+                                                    lineNumber: 247,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1412,34 +1466,11 @@ function IssueDetailModal() {
                                                                     className: "w-3 h-3 text-slate-400"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                                    lineNumber: 257,
-                                                                    columnNumber: 25
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    children: entry.changedBy
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                                    lineNumber: 258,
-                                                                    columnNumber: 25
-                                                                }, this)
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                            lineNumber: 256,
-                                                            columnNumber: 23
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "flex items-center gap-1 text-slate-400",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
-                                                                    className: "w-3 h-3"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
                                                                     lineNumber: 261,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    children: entry.changedAt
+                                                                    children: entry.changedBy
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
                                                                     lineNumber: 262,
@@ -1450,35 +1481,58 @@ function IssueDetailModal() {
                                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
                                                             lineNumber: 260,
                                                             columnNumber: 23
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "flex items-center gap-1 text-slate-400",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
+                                                                    className: "w-3 h-3"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                                    lineNumber: 265,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    children: entry.changedAt
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                                    lineNumber: 266,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                            lineNumber: 264,
+                                                            columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 255,
+                                                    lineNumber: 259,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, entry.id, true, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 239,
+                                            lineNumber: 243,
                                             columnNumber: 19
                                         }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-xs text-slate-400 italic py-2 text-center bg-slate-50 dark:bg-slate-800/30 rounded-lg",
                                         children: "No previous status transitions recorded."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                        lineNumber: 268,
+                                        lineNumber: 272,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 236,
+                                    lineNumber: 240,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                            lineNumber: 228,
+                            lineNumber: 232,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1486,162 +1540,310 @@ function IssueDetailModal() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "flex items-center justify-between",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-xs font-semibold uppercase tracking-wider text-slate-500 flex items-center gap-1.5",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$square$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageSquare$3e$__["MessageSquare"], {
-                                                className: "w-3.5 h-3.5 text-indigo-500"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                lineNumber: 279,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: [
-                                                    "Management Notes (",
-                                                    selectedIssue.notes?.length || 0,
-                                                    ")"
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                lineNumber: 280,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                        lineNumber: 278,
-                                        columnNumber: 15
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 277,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "space-y-2 max-h-40 overflow-y-auto pr-1",
-                                    children: selectedIssue.notes && selectedIssue.notes.length > 0 ? selectedIssue.notes.map((note)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "p-3 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 rounded-xl space-y-1 text-xs",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex items-center justify-between text-slate-400",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "font-semibold text-slate-700 dark:text-slate-300",
-                                                            children: note.author
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                            lineNumber: 293,
-                                                            columnNumber: 23
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "text-[11px]",
-                                                            children: note.createdAt
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                            lineNumber: 296,
-                                                            columnNumber: 23
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 292,
-                                                    columnNumber: 21
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-slate-800 dark:text-slate-200 leading-relaxed",
-                                                    children: note.content
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 298,
-                                                    columnNumber: 21
-                                                }, this)
-                                            ]
-                                        }, note.id, true, {
-                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 288,
-                                            columnNumber: 19
-                                        }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "text-xs text-slate-400 italic py-2 text-center bg-slate-50 dark:bg-slate-800/30 rounded-lg",
-                                        children: "No management notes added yet."
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                        lineNumber: 304,
-                                        columnNumber: 17
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 285,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-                                    onSubmit: onAddNoteSubmit,
-                                    className: "pt-2 flex gap-2",
                                     children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                            type: "text",
-                                            maxLength: 500,
-                                            placeholder: "Add a short management note or action item...",
-                                            value: noteText,
-                                            onChange: (e)=>setNoteText(e.target.value),
-                                            className: "flex-1 text-xs bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 312,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            type: "submit",
-                                            disabled: !noteText.trim() || isSubmittingNote,
-                                            className: "px-4 py-2 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors shrink-0",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            className: "text-xs font-semibold uppercase tracking-wider text-slate-500 flex items-center gap-1.5",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
-                                                    className: "w-3 h-3"
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$square$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageSquare$3e$__["MessageSquare"], {
+                                                    className: "w-3.5 h-3.5 text-indigo-500"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 325,
+                                                    lineNumber: 284,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    children: "Add Note"
-                                                }, void 0, false, {
+                                                    children: [
+                                                        "Management Notes (",
+                                                        selectedIssue.notes?.length || 0,
+                                                        ")"
+                                                    ]
+                                                }, void 0, true, {
                                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                                    lineNumber: 326,
+                                                    lineNumber: 285,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                            lineNumber: 320,
+                                            lineNumber: 283,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-[11px] text-slate-400",
+                                            children: "Reverse chronological log"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                            lineNumber: 287,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                                    lineNumber: 311,
+                                    lineNumber: 282,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "space-y-2 max-h-48 overflow-y-auto pr-1",
+                                    children: selectedIssue.notes && selectedIssue.notes.length > 0 ? selectedIssue.notes.map((note)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "p-3 bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl space-y-1.5 text-xs group transition-colors hover:border-slate-300 dark:hover:border-slate-700",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center justify-between text-slate-400",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex items-center gap-1.5 font-semibold text-slate-700 dark:text-slate-200",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__["User"], {
+                                                                    className: "w-3 h-3 text-slate-400"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                                    lineNumber: 300,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    children: note.author
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                                    lineNumber: 301,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                            lineNumber: 299,
+                                                            columnNumber: 23
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex items-center gap-2",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-[11px] text-slate-400 flex items-center gap-1",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
+                                                                            className: "w-3 h-3"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                                            lineNumber: 305,
+                                                                            columnNumber: 27
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            children: note.createdAt
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                                            lineNumber: 306,
+                                                                            columnNumber: 27
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                                    lineNumber: 304,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                    type: "button",
+                                                                    title: "Delete note",
+                                                                    onClick: ()=>handleDeleteNote(selectedIssue.id, note.id),
+                                                                    className: "opacity-0 group-hover:opacity-100 p-1 text-slate-400 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded transition-all",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trash$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Trash2$3e$__["Trash2"], {
+                                                                        className: "w-3 h-3"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                                        lineNumber: 314,
+                                                                        columnNumber: 27
+                                                                    }, this)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                                    lineNumber: 308,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                            lineNumber: 303,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                    lineNumber: 298,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-slate-800 dark:text-slate-200 leading-relaxed break-words",
+                                                    children: note.content
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                    lineNumber: 318,
+                                                    columnNumber: 21
+                                                }, this)
+                                            ]
+                                        }, note.id, true, {
+                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                            lineNumber: 294,
+                                            columnNumber: 19
+                                        }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-xs text-slate-400 italic py-3 text-center bg-slate-50 dark:bg-slate-800/30 rounded-lg",
+                                        children: "No management notes added yet. Use the form below to add operational notes."
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                        lineNumber: 324,
+                                        columnNumber: 17
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                    lineNumber: 291,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                                    onSubmit: onAddNoteSubmit,
+                                    className: "pt-2 space-y-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
+                                            rows: 2,
+                                            maxLength: 500,
+                                            placeholder: "Add a short management note or action item (max 500 characters)...",
+                                            value: noteText,
+                                            onChange: (e)=>setNoteText(e.target.value),
+                                            className: "w-full text-xs bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl p-3 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                            lineNumber: 332,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex flex-wrap items-center justify-between gap-2",
+                                            children: [
+                                                availableManagers.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center gap-1.5 text-xs",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-slate-400 text-[11px]",
+                                                            children: "Author:"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                            lineNumber: 345,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                            "aria-label": "Note Author",
+                                                            value: noteAuthorId ?? selectedIssue.assignedManagerId ?? '',
+                                                            onChange: (e)=>setNoteAuthorId(e.target.value ? parseInt(e.target.value, 10) : null),
+                                                            className: "bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-2 py-1 text-slate-700 dark:text-slate-300 text-[11px] focus:outline-none focus:ring-1 focus:ring-indigo-500",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                    value: "",
+                                                                    children: [
+                                                                        "Assigned Lead (",
+                                                                        selectedIssue.assignedManager,
+                                                                        ")"
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                                    lineNumber: 352,
+                                                                    columnNumber: 23
+                                                                }, this),
+                                                                availableManagers.map((m)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                        value: m.managerId,
+                                                                        children: m.fullName
+                                                                    }, m.managerId, false, {
+                                                                        fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                                        lineNumber: 354,
+                                                                        columnNumber: 25
+                                                                    }, this))
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                            lineNumber: 346,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                    lineNumber: 344,
+                                                    columnNumber: 19
+                                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {}, void 0, false, {
+                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                    lineNumber: 361,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center gap-3 ml-auto",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: `text-[11px] font-mono ${500 - noteText.length < 50 ? 'text-amber-500 font-semibold' : 'text-slate-400'}`,
+                                                            children: [
+                                                                500 - noteText.length,
+                                                                " / 500 chars left"
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                            lineNumber: 366,
+                                                            columnNumber: 19
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            type: "submit",
+                                                            disabled: !noteText.trim() || noteText.trim().length > 500 || isSubmittingNote,
+                                                            className: "px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
+                                                                    className: "w-3 h-3"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                                    lineNumber: 380,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    children: isSubmittingNote ? 'Saving...' : 'Add Note'
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                                    lineNumber: 381,
+                                                                    columnNumber: 21
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                            lineNumber: 375,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                                    lineNumber: 365,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                            lineNumber: 341,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
+                                    lineNumber: 331,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                            lineNumber: 276,
+                            lineNumber: 281,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-                    lineNumber: 93,
+                    lineNumber: 97,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-            lineNumber: 69,
+            lineNumber: 73,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/dashboard/issue-detail-modal.tsx",
-        lineNumber: 65,
+        lineNumber: 69,
         columnNumber: 5
     }, this);
 }
@@ -2507,40 +2709,43 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-check.mjs [app-ssr] (ecmascript) <export default as CheckCircle2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clock.mjs [app-ssr] (ecmascript) <export default as Clock>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$inbox$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Inbox$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/inbox.mjs [app-ssr] (ecmascript) <export default as Inbox>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$funnel$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Filter$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/funnel.mjs [app-ssr] (ecmascript) <export default as Filter>");
 'use client';
 ;
 ;
 ;
 function MetricsSummary() {
-    const { metrics, setFilter } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$issues$2d$context$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useIssues"])();
+    const { metrics, filters, toggleTileFilter } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$issues$2d$context$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useIssues"])();
+    const isOpenActive = filters.status === 'New,In Progress' && !filters.followUp;
+    const isHighPriorityActive = filters.priority === 'High';
+    const isResolvedActive = filters.status === 'Resolved';
+    const isFollowUpActive = filters.followUp === true;
     const cards = [
         {
-            id: 'totalOpen',
-            label: 'Total Open Issues',
-            value: metrics.totalOpen,
-            subtext: 'Active operational escalations',
+            id: 'open',
+            label: 'Open Issues',
+            value: metrics.open ?? metrics.totalOpen,
+            subtext: 'Active operational workload',
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$inbox$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Inbox$3e$__["Inbox"],
             iconBg: 'bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400',
-            borderStyle: 'border-slate-200 dark:border-slate-800 hover:border-blue-300',
-            badge: 'Active Workload',
-            onClick: ()=>{
-                // Filter by all open
-                setFilter('status', 'All');
-            }
+            isActive: isOpenActive,
+            borderStyle: isOpenActive ? 'ring-2 ring-blue-500 border-blue-500 bg-blue-50/20 dark:bg-blue-950/20 shadow-md' : 'border-slate-200 dark:border-slate-800 hover:border-blue-300',
+            badge: isOpenActive ? 'Active Filter' : 'Click to Filter',
+            badgeClass: isOpenActive ? 'bg-blue-600 text-white border-blue-600' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700',
+            onClick: ()=>toggleTileFilter('open')
         },
         {
-            id: 'highPriority',
+            id: 'high_priority',
             label: 'High-Priority Issues',
-            value: metrics.highPriority,
-            subtext: 'Requires urgent supervisor review',
+            value: metrics.high_priority ?? metrics.highPriority,
+            subtext: 'Critical bottlenecks needing review',
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$triangle$2d$alert$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertTriangle$3e$__["AlertTriangle"],
             iconBg: 'bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400',
-            borderStyle: 'border-rose-200 dark:border-rose-900/60 bg-gradient-to-br from-white to-rose-50/30 dark:from-slate-900 dark:to-rose-950/20 hover:border-rose-400 shadow-sm shadow-rose-500/5',
-            badge: 'Immediate Action',
-            badgeClass: 'bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-800',
-            onClick: ()=>{
-                setFilter('priority', 'High');
-            }
+            isActive: isHighPriorityActive,
+            borderStyle: isHighPriorityActive ? 'ring-2 ring-rose-500 border-rose-500 bg-rose-50/30 dark:bg-rose-950/30 shadow-md' : 'border-rose-200 dark:border-rose-900/60 bg-gradient-to-br from-white to-rose-50/30 dark:from-slate-900 dark:to-rose-950/20 hover:border-rose-400',
+            badge: isHighPriorityActive ? 'Active Filter' : 'Immediate Action',
+            badgeClass: isHighPriorityActive ? 'bg-rose-600 text-white border-rose-600' : 'bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-800',
+            onClick: ()=>toggleTileFilter('high_priority')
         },
         {
             id: 'resolved',
@@ -2549,26 +2754,24 @@ function MetricsSummary() {
             subtext: 'Successfully closed tickets',
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"],
             iconBg: 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400',
-            borderStyle: 'border-slate-200 dark:border-slate-800 hover:border-emerald-300',
-            badge: 'Completed',
-            badgeClass: 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800',
-            onClick: ()=>{
-                setFilter('status', 'Resolved');
-            }
+            isActive: isResolvedActive,
+            borderStyle: isResolvedActive ? 'ring-2 ring-emerald-500 border-emerald-500 bg-emerald-50/30 dark:bg-emerald-950/30 shadow-md' : 'border-slate-200 dark:border-slate-800 hover:border-emerald-300',
+            badge: isResolvedActive ? 'Active Filter' : 'Completed',
+            badgeClass: isResolvedActive ? 'bg-emerald-600 text-white border-emerald-600' : 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800',
+            onClick: ()=>toggleTileFilter('resolved')
         },
         {
-            id: 'followUp',
+            id: 'follow_up',
             label: 'Requires Follow-up',
-            value: metrics.requiresFollowUp,
-            subtext: 'Open bottlenecks & vendor escalations',
+            value: metrics.follow_up ?? metrics.requiresFollowUp,
+            subtext: 'In Progress > 3 days without update',
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"],
             iconBg: 'bg-amber-50 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400',
-            borderStyle: 'border-slate-200 dark:border-slate-800 hover:border-amber-300',
-            badge: 'Attention Needed',
-            badgeClass: 'bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800',
-            onClick: ()=>{
-                setFilter('priority', 'High');
-            }
+            isActive: isFollowUpActive,
+            borderStyle: isFollowUpActive ? 'ring-2 ring-amber-500 border-amber-500 bg-amber-50/30 dark:bg-amber-950/30 shadow-md' : 'border-slate-200 dark:border-slate-800 hover:border-amber-300',
+            badge: isFollowUpActive ? 'Active Filter' : 'Stale (>3 days)',
+            badgeClass: isFollowUpActive ? 'bg-amber-600 text-white border-amber-600' : 'bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800',
+            onClick: ()=>toggleTileFilter('follow_up')
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2580,7 +2783,8 @@ function MetricsSummary() {
                 onClick: card.onClick,
                 role: "button",
                 tabIndex: 0,
-                className: `rounded-2xl border p-5 bg-white dark:bg-slate-900 transition-all cursor-pointer hover:shadow-md ${card.borderStyle}`,
+                title: `${card.label} (Click to filter table)`,
+                className: `rounded-2xl border p-5 bg-white dark:bg-slate-900 transition-all cursor-pointer hover:shadow-md select-none ${card.borderStyle}`,
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex items-center justify-between mb-3",
@@ -2591,26 +2795,42 @@ function MetricsSummary() {
                                     className: "w-5 h-5"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard/metrics-summary.tsx",
-                                    lineNumber: 83,
+                                    lineNumber: 101,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard/metrics-summary.tsx",
-                                lineNumber: 82,
+                                lineNumber: 100,
                                 columnNumber: 15
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: `text-[11px] font-semibold px-2.5 py-0.5 rounded-full border ${card.badgeClass || 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700'}`,
-                                children: card.badge
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center gap-1.5",
+                                children: [
+                                    card.isActive && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$funnel$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Filter$3e$__["Filter"], {
+                                        className: "w-3 h-3 text-indigo-500 animate-pulse"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/dashboard/metrics-summary.tsx",
+                                        lineNumber: 104,
+                                        columnNumber: 35
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: `text-[11px] font-semibold px-2.5 py-0.5 rounded-full border transition-all ${card.badgeClass}`,
+                                        children: card.badge
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/dashboard/metrics-summary.tsx",
+                                        lineNumber: 105,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/src/components/dashboard/metrics-summary.tsx",
-                                lineNumber: 85,
+                                lineNumber: 103,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/dashboard/metrics-summary.tsx",
-                        lineNumber: 81,
+                        lineNumber: 99,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2620,7 +2840,7 @@ function MetricsSummary() {
                                 children: card.value
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard/metrics-summary.tsx",
-                                lineNumber: 95,
+                                lineNumber: 116,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2628,7 +2848,7 @@ function MetricsSummary() {
                                 children: card.label
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard/metrics-summary.tsx",
-                                lineNumber: 98,
+                                lineNumber: 119,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2636,25 +2856,25 @@ function MetricsSummary() {
                                 children: card.subtext
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard/metrics-summary.tsx",
-                                lineNumber: 101,
+                                lineNumber: 122,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/dashboard/metrics-summary.tsx",
-                        lineNumber: 94,
+                        lineNumber: 115,
                         columnNumber: 13
                     }, this)
                 ]
             }, card.id, true, {
                 fileName: "[project]/src/components/dashboard/metrics-summary.tsx",
-                lineNumber: 74,
+                lineNumber: 91,
                 columnNumber: 11
             }, this);
         })
     }, void 0, false, {
         fileName: "[project]/src/components/dashboard/metrics-summary.tsx",
-        lineNumber: 70,
+        lineNumber: 87,
         columnNumber: 5
     }, this);
 }
@@ -2771,12 +2991,16 @@ const defaultFilters = {
     category: 'All',
     priority: 'All',
     status: 'All',
-    searchQuery: ''
+    searchQuery: '',
+    followUp: false
 };
 const defaultMetrics = {
+    open: 0,
+    high_priority: 0,
+    resolved: 0,
+    follow_up: 0,
     totalOpen: 0,
     highPriority: 0,
-    resolved: 0,
     requiresFollowUp: 0
 };
 const IssuesContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createContext"])(undefined);
@@ -2792,8 +3016,23 @@ function IssuesProvider({ children }) {
         'All'
     ]);
     const [availableManagers, setAvailableManagers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [rawStores, setRawStores] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [rawCategories, setRawCategories] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
     const [isBackendOnline, setIsBackendOnline] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isCreateModalOpen, setIsCreateModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [toast, setToast] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const showToast = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((message, type = 'info')=>{
+        const id = Date.now();
+        setToast({
+            id,
+            message,
+            type
+        });
+        setTimeout(()=>{
+            setToast((curr)=>curr?.id === id ? null : curr);
+        }, 3500);
+    }, []);
     // Load Metadata (Stores & Categories & Managers) for Dropdowns
     const loadMeta = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(async ()=>{
         try {
@@ -2809,6 +3048,8 @@ function IssuesProvider({ children }) {
             setAvailableStores(stores);
             setAvailableCategories(categories);
             setAvailableManagers(meta.managers || []);
+            setRawStores(meta.stores || []);
+            setRawCategories(meta.categories || []);
             setIsBackendOnline(true);
         } catch  {
             // Fallback from mock data
@@ -2823,10 +3064,67 @@ function IssuesProvider({ children }) {
             setAvailableStores(stores);
             setAvailableCategories(categories);
             setAvailableManagers([]);
+            setRawStores([
+                {
+                    storeId: 1,
+                    storeNumber: 'ST-1010',
+                    storeName: 'Downtown Flagship'
+                },
+                {
+                    storeId: 2,
+                    storeNumber: 'ST-1020',
+                    storeName: 'Metro Mall Annex'
+                },
+                {
+                    storeId: 3,
+                    storeNumber: 'ST-1030',
+                    storeName: 'Westside Galleria'
+                },
+                {
+                    storeId: 4,
+                    storeNumber: 'ST-1040',
+                    storeName: 'Suburban Express'
+                },
+                {
+                    storeId: 5,
+                    storeNumber: 'ST-1050',
+                    storeName: 'Airport Terminal 3'
+                }
+            ]);
+            setRawCategories([
+                {
+                    categoryId: 1,
+                    categoryName: 'Equipment'
+                },
+                {
+                    categoryId: 2,
+                    categoryName: 'Staffing'
+                },
+                {
+                    categoryId: 3,
+                    categoryName: 'Inventory'
+                },
+                {
+                    categoryId: 4,
+                    categoryName: 'Cleanliness'
+                },
+                {
+                    categoryId: 5,
+                    categoryName: 'IT/POS'
+                },
+                {
+                    categoryId: 6,
+                    categoryName: 'Safety'
+                },
+                {
+                    categoryId: 7,
+                    categoryName: 'Customer'
+                }
+            ]);
             setIsBackendOnline(false);
         }
     }, []);
-    // Load Issues & Metrics
+    // Load Issues & Metrics (Phase 8: summary metrics recompute when filters change)
     const loadIssuesAndMetrics = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(async ()=>{
         setIsLoading(true);
         try {
@@ -2836,9 +3134,16 @@ function IssuesProvider({ children }) {
                     category: filters.category,
                     priority: filters.priority,
                     status: filters.status,
-                    search: filters.searchQuery
+                    search: filters.searchQuery,
+                    followUp: filters.followUp
                 }),
-                (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fetchMetrics"])()
+                // Pass filter dimensions so tiles recompute for active store/category/search
+                (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fetchMetrics"])({
+                    store: filters.store,
+                    category: filters.category,
+                    priority: filters.priority,
+                    search: filters.searchQuery
+                })
             ]);
             setIssues(fetchedIssues);
             setMetrics(fetchedMetrics);
@@ -2851,21 +3156,25 @@ function IssuesProvider({ children }) {
                 const matchesStore = filters.store === 'All' || issue.storeNumber === filters.store;
                 const matchesCategory = filters.category === 'All' || issue.category === filters.category;
                 const matchesPriority = filters.priority === 'All' || issue.priority === filters.priority;
-                const matchesStatus = filters.status === 'All' || issue.status === filters.status;
+                const matchesStatus = filters.status === 'All' ? true : filters.status === 'New,In Progress' ? issue.status !== 'Resolved' : issue.status === filters.status;
+                const matchesFollowUp = !filters.followUp || issue.requiresFollowUp && issue.status !== 'Resolved';
                 const q = filters.searchQuery.trim().toLowerCase();
                 const matchesSearch = q === '' || issue.shortDescription.toLowerCase().includes(q) || issue.storeName.toLowerCase().includes(q) || issue.assignedManager.toLowerCase().includes(q);
-                return matchesStore && matchesCategory && matchesPriority && matchesStatus && matchesSearch;
+                return matchesStore && matchesCategory && matchesPriority && matchesStatus && matchesFollowUp && matchesSearch;
             });
             setIssues(filtered);
-            const totalOpen = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$intial_issues$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["INITIAL_ISSUES"].filter((i)=>i.status !== 'Resolved').length;
-            const highPriority = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$intial_issues$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["INITIAL_ISSUES"].filter((i)=>i.priority === 'High' && i.status !== 'Resolved').length;
+            const open = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$intial_issues$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["INITIAL_ISSUES"].filter((i)=>i.status !== 'Resolved').length;
+            const high_priority = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$intial_issues$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["INITIAL_ISSUES"].filter((i)=>i.priority === 'High' && i.status !== 'Resolved').length;
             const resolved = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$intial_issues$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["INITIAL_ISSUES"].filter((i)=>i.status === 'Resolved').length;
-            const requiresFollowUp = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$intial_issues$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["INITIAL_ISSUES"].filter((i)=>i.requiresFollowUp && i.status !== 'Resolved').length;
+            const follow_up = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$intial_issues$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["INITIAL_ISSUES"].filter((i)=>i.requiresFollowUp && i.status !== 'Resolved').length;
             setMetrics({
-                totalOpen,
-                highPriority,
+                open,
+                high_priority,
                 resolved,
-                requiresFollowUp
+                follow_up,
+                totalOpen: open,
+                highPriority: high_priority,
+                requiresFollowUp: follow_up
             });
         } finally{
             setIsLoading(false);
@@ -2924,17 +3233,23 @@ function IssuesProvider({ children }) {
                 setIssues((prev)=>prev.map((i)=>i.id === issueId ? updatedIssue : i));
                 const updatedMetrics = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fetchMetrics"])();
                 setMetrics(updatedMetrics);
+                showToast(`Status updated to ${newStatus}`, 'success');
             } catch (err) {
                 console.error('Failed to update status on server:', err);
+                showToast('Failed to update status on server', 'error');
             }
+        } else {
+            showToast(`Status set to ${newStatus} (demo mode)`, 'success');
         }
     };
-    // Handle Add Note
-    const handleAddNote = async (issueId, noteText)=>{
+    // Handle Add Management Note (Phase 7: 500-char limit, author resolution & persistence)
+    const handleAddNote = async (issueId, noteText, managerId)=>{
         if (!noteText.trim()) return;
-        const newNote = {
-            id: `n-${Date.now()}`,
-            author: 'Current Manager',
+        const managerObj = managerId ? availableManagers.find((m)=>m.managerId === managerId) : null;
+        const tempId = `n-temp-${Date.now()}`;
+        const optimisticNote = {
+            id: tempId,
+            author: managerObj?.fullName || 'Store Manager',
             content: noteText.trim(),
             createdAt: new Date().toLocaleDateString('en-US', {
                 month: 'short',
@@ -2950,7 +3265,7 @@ function IssuesProvider({ children }) {
                     return {
                         ...issue,
                         notes: [
-                            newNote,
+                            optimisticNote,
                             ...issue.notes || []
                         ]
                     };
@@ -2960,10 +3275,92 @@ function IssuesProvider({ children }) {
         // 2. Call backend API if online
         if (isBackendOnline) {
             try {
-                await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addIssueNote"])(issueId, noteText.trim());
+                const persistedNote = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addIssueNote"])(issueId, noteText.trim(), managerId);
+                // Replace temp optimistic note with server persisted note
+                setIssues((prev)=>prev.map((issue)=>{
+                        if (issue.id === issueId) {
+                            return {
+                                ...issue,
+                                notes: [
+                                    persistedNote,
+                                    ...(issue.notes || []).filter((n)=>n.id !== tempId)
+                                ]
+                            };
+                        }
+                        return issue;
+                    }));
+                showToast('Management note added', 'success');
             } catch (err) {
                 console.error('Failed to add note to server:', err);
+                showToast('Failed to add note on server', 'error');
             }
+        } else {
+            showToast('Management note added (demo mode)', 'success');
+        }
+    };
+    // Handle Delete Management Note (Phase 7 Optional)
+    const handleDeleteNote = async (issueId, noteId)=>{
+        // 1. Optimistic delete in UI
+        setIssues((prev)=>prev.map((issue)=>{
+                if (issue.id === issueId) {
+                    return {
+                        ...issue,
+                        notes: (issue.notes || []).filter((n)=>n.id !== noteId)
+                    };
+                }
+                return issue;
+            }));
+        // 2. Call backend API if online
+        if (isBackendOnline && !noteId.startsWith('n-temp-')) {
+            try {
+                await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["deleteIssueNote"])(noteId);
+                showToast('Management note deleted', 'info');
+            } catch (err) {
+                console.error('Failed to delete note on server:', err);
+                showToast('Failed to delete note on server', 'error');
+            }
+        } else {
+            showToast('Management note deleted', 'info');
+        }
+    };
+    // Handle Create New Issue (Phase 9)
+    const handleCreateIssue = async (payload)=>{
+        if (isBackendOnline) {
+            try {
+                const created = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createIssue"])(payload);
+                showToast(`Issue ${created.id} reported successfully`, 'success');
+                setIsCreateModalOpen(false);
+                await loadIssuesAndMetrics();
+            } catch (err) {
+                console.error('Failed to create issue on server:', err);
+                showToast('Failed to create issue on server', 'error');
+                throw err;
+            }
+        } else {
+            const storeObj = rawStores.find((s)=>s.storeId === payload.storeId);
+            const catObj = rawCategories.find((c)=>c.categoryId === payload.categoryId);
+            const mgrObj = availableManagers.find((m)=>m.managerId === payload.assignedManagerId);
+            const newIssue = {
+                id: `ISS-${Date.now().toString().slice(-4)}`,
+                storeNumber: storeObj?.storeNumber || `Store #${payload.storeId}`,
+                storeName: storeObj?.storeName || 'Retail Store',
+                category: catObj?.categoryName || 'General',
+                shortDescription: payload.shortDescription,
+                detailedDescription: payload.detailedDescription,
+                dateReported: new Date().toISOString().split('T')[0],
+                priority: payload.priority || 'Medium',
+                status: 'New',
+                assignedManager: mgrObj?.fullName || 'Duty Manager',
+                requiresFollowUp: payload.priority === 'High',
+                notes: [],
+                statusHistory: []
+            };
+            setIssues((prev)=>[
+                    newIssue,
+                    ...prev
+                ]);
+            setIsCreateModalOpen(false);
+            showToast(`Issue ${newIssue.id} created (demo mode)`, 'success');
         }
     };
     const setFilter = (key, value)=>{
@@ -2974,6 +3371,39 @@ function IssuesProvider({ children }) {
     };
     const resetFilters = ()=>{
         setFilters(defaultFilters);
+        showToast('Filters reset to default', 'info');
+    };
+    // Phase 8: Clickable tiles applying corresponding filter to table below
+    const toggleTileFilter = (tileType)=>{
+        setFilters((prev)=>{
+            switch(tileType){
+                case 'open':
+                    return {
+                        ...prev,
+                        status: prev.status === 'New,In Progress' ? 'All' : 'New,In Progress',
+                        followUp: false
+                    };
+                case 'high_priority':
+                    return {
+                        ...prev,
+                        priority: prev.priority === 'High' ? 'All' : 'High'
+                    };
+                case 'resolved':
+                    return {
+                        ...prev,
+                        status: prev.status === 'Resolved' ? 'All' : 'Resolved',
+                        followUp: false
+                    };
+                case 'follow_up':
+                    return {
+                        ...prev,
+                        followUp: !prev.followUp,
+                        status: prev.followUp ? 'All' : 'In Progress'
+                    };
+                default:
+                    return prev;
+            }
+        });
     };
     const selectedIssue = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
         return issues.find((i)=>i.id === selectedIssueId) || null;
@@ -2990,19 +3420,28 @@ function IssuesProvider({ children }) {
             availableStores,
             availableCategories,
             availableManagers,
+            rawStores,
+            rawCategories,
             isLoading,
             isBackendOnline,
+            toast,
+            isCreateModalOpen,
+            setIsCreateModalOpen,
+            showToast,
             setSelectedIssueId,
             setFilter,
             resetFilters,
+            toggleTileFilter,
             handleStatusChange,
             handleAddNote,
+            handleDeleteNote,
+            handleCreateIssue,
             refresh: loadIssuesAndMetrics
         },
         children: children
     }, void 0, false, {
         fileName: "[project]/src/context/issues-context.tsx",
-        lineNumber: 246,
+        lineNumber: 458,
         columnNumber: 5
     }, this);
 }
@@ -3261,6 +3700,10 @@ const INITIAL_ISSUES = [
 __turbopack_context__.s([
     "addIssueNote",
     ()=>addIssueNote,
+    "createIssue",
+    ()=>createIssue,
+    "deleteIssueNote",
+    ()=>deleteIssueNote,
     "fetchIssues",
     ()=>fetchIssues,
     "fetchMetadata",
@@ -3332,8 +3775,12 @@ async function fetchIssues(filters) {
     const query = new URLSearchParams();
     if (filters) {
         Object.entries(filters).forEach(([key, val])=>{
-            if (val && val !== 'All') {
-                query.append(key, val);
+            if (val !== undefined && val !== null && val !== 'All' && val !== '' && val !== false) {
+                if (key === 'followUp' || key === 'follow_up') {
+                    query.append('follow_up', 'true');
+                } else {
+                    query.append(key, String(val));
+                }
             }
         });
     }
@@ -3345,12 +3792,35 @@ async function fetchIssues(filters) {
     const data = await res.json();
     return data.map(transformBackendIssue);
 }
-async function fetchMetrics() {
-    const res = await fetch(`${BACKEND_URL}/api/metrics`, {
+async function fetchMetrics(filters) {
+    const query = new URLSearchParams();
+    if (filters) {
+        Object.entries(filters).forEach(([key, val])=>{
+            if (val !== undefined && val !== null && val !== 'All' && val !== '' && val !== false) {
+                if (key === 'followUp' || key === 'follow_up') {
+                    query.append('follow_up', 'true');
+                } else {
+                    query.append(key, String(val));
+                }
+            }
+        });
+    }
+    // Connects to Phase 8 /api/summary endpoint (accepts same filter params as /api/issues)
+    const url = `${BACKEND_URL}/api/summary${query.toString() ? `?${query.toString()}` : ''}`;
+    const res = await fetch(url, {
         cache: 'no-store'
     });
-    if (!res.ok) throw new Error('Failed to fetch metrics');
-    return res.json();
+    if (!res.ok) throw new Error('Failed to fetch summary metrics');
+    const data = await res.json();
+    return {
+        open: data.open ?? data.totalOpen ?? 0,
+        high_priority: data.high_priority ?? data.highPriority ?? 0,
+        resolved: data.resolved ?? 0,
+        follow_up: data.follow_up ?? data.requiresFollowUp ?? 0,
+        totalOpen: data.open ?? data.totalOpen ?? 0,
+        highPriority: data.high_priority ?? data.highPriority ?? 0,
+        requiresFollowUp: data.follow_up ?? data.requiresFollowUp ?? 0
+    };
 }
 async function fetchMetadata() {
     const res = await fetch(`${BACKEND_URL}/api/meta`, {
@@ -3383,7 +3853,7 @@ async function updateIssueStatus(issueIdStr, newStatus, changedBy) {
     const data = await res.json();
     return transformBackendIssue(data);
 }
-async function addIssueNote(issueIdStr, noteText) {
+async function addIssueNote(issueIdStr, noteText, managerId) {
     const numericId = parseInt(issueIdStr.replace('ISS-', ''), 10);
     const res = await fetch(`${BACKEND_URL}/api/issues/${numericId}/notes`, {
         method: 'POST',
@@ -3391,10 +3861,55 @@ async function addIssueNote(issueIdStr, noteText) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            noteText
+            note_text: noteText,
+            manager_id: managerId
         })
     });
     if (!res.ok) throw new Error('Failed to add note');
+    const n = await res.json();
+    return {
+        id: String(n.noteId),
+        author: n.manager?.fullName || 'Store Manager',
+        content: n.noteText,
+        createdAt: new Date(n.createdAt).toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        })
+    };
+}
+async function deleteIssueNote(noteId) {
+    const res = await fetch(`${BACKEND_URL}/api/notes/${noteId}`, {
+        method: 'DELETE'
+    });
+    if (!res.ok) throw new Error('Failed to delete note');
+}
+async function createIssue(payload) {
+    const priorityMap = {
+        High: 'HIGH',
+        Medium: 'MEDIUM',
+        Low: 'LOW'
+    };
+    const res = await fetch(`${BACKEND_URL}/api/issues`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            storeId: payload.storeId,
+            categoryId: payload.categoryId,
+            shortDescription: payload.shortDescription,
+            detailedDescription: payload.detailedDescription || null,
+            priority: payload.priority ? priorityMap[payload.priority] || 'MEDIUM' : 'MEDIUM',
+            assignedManagerId: payload.assignedManagerId || null,
+            reportedBy: payload.reportedBy || 'Duty Manager'
+        })
+    });
+    if (!res.ok) throw new Error('Failed to create issue');
+    const data = await res.json();
+    return transformBackendIssue(data);
 }
 }),
 ];

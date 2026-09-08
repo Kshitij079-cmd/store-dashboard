@@ -6,6 +6,7 @@ import {
   IssueFilterState,
   DashboardMetrics,
   Status,
+  Priority,
   ManagementNote,
 } from '@/types/issues';
 import { INITIAL_ISSUES } from '@/data/intial_issues';
@@ -15,7 +16,15 @@ import {
   fetchMetadata,
   updateIssueStatus,
   addIssueNote,
+  deleteIssueNote,
+  createIssue,
 } from '@/lib/api';
+
+export interface ToastNotification {
+  id: number;
+  message: string;
+  type: 'success' | 'info' | 'error';
+}
 
 interface IssuesContextType {
   issues: OperationalIssue[];
@@ -25,13 +34,29 @@ interface IssuesContextType {
   availableStores: string[];
   availableCategories: string[];
   availableManagers: Array<{ managerId: number; fullName: string }>;
+  rawStores: Array<{ storeId: number; storeNumber: string; storeName: string }>;
+  rawCategories: Array<{ categoryId: number; categoryName: string }>;
   isLoading: boolean;
   isBackendOnline: boolean;
+  toast: ToastNotification | null;
+  isCreateModalOpen: boolean;
+  setIsCreateModalOpen: (open: boolean) => void;
+  showToast: (message: string, type?: 'success' | 'info' | 'error') => void;
   setSelectedIssueId: (id: string | null) => void;
-  setFilter: (key: keyof IssueFilterState, value: string) => void;
+  setFilter: <K extends keyof IssueFilterState>(key: K, value: IssueFilterState[K]) => void;
   resetFilters: () => void;
   handleStatusChange: (issueId: string, newStatus: Status, changedBy?: number | null) => Promise<void>;
-  handleAddNote: (issueId: string, noteText: string) => Promise<void>;
+  handleAddNote: (issueId: string, noteText: string, managerId?: number | null) => Promise<void>;
+  handleDeleteNote: (issueId: string, noteId: string) => Promise<void>;
+  handleCreateIssue: (payload: {
+    storeId: number;
+    categoryId: number;
+    shortDescription: string;
+    detailedDescription?: string;
+    priority?: Priority;
+    assignedManagerId?: number | null;
+  }) => Promise<void>;
+  toggleTileFilter: (tileType: 'open' | 'high_priority' | 'resolved' | 'follow_up') => void;
   refresh: () => Promise<void>;
 }
 
@@ -41,12 +66,16 @@ const defaultFilters: IssueFilterState = {
   priority: 'All',
   status: 'All',
   searchQuery: '',
+  followUp: false,
 };
 
 const defaultMetrics: DashboardMetrics = {
+  open: 0,
+  high_priority: 0,
+  resolved: 0,
+  follow_up: 0,
   totalOpen: 0,
   highPriority: 0,
-  resolved: 0,
   requiresFollowUp: 0,
 };
 
@@ -60,8 +89,20 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
   const [availableStores, setAvailableStores] = useState<string[]>(['All']);
   const [availableCategories, setAvailableCategories] = useState<string[]>(['All']);
   const [availableManagers, setAvailableManagers] = useState<Array<{ managerId: number; fullName: string }>>([]);
+  const [rawStores, setRawStores] = useState<Array<{ storeId: number; storeNumber: string; storeName: string }>>([]);
+  const [rawCategories, setRawCategories] = useState<Array<{ categoryId: number; categoryName: string }>>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isBackendOnline, setIsBackendOnline] = useState(false);
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const [toast, setToast] = useState<ToastNotification | null>(null);
+
+  const showToast = useCallback((message: string, type: 'success' | 'info' | 'error' = 'info') => {
+    const id = Date.now();
+    setToast({ id, message, type });
+    setTimeout(() => {
+      setToast((curr) => (curr?.id === id ? null : curr));
+    }, 3500);
+  }, []);
 
   // Load Metadata (Stores & Categories & Managers) for Dropdowns
   const loadMeta = useCallback(async () => {
@@ -72,6 +113,8 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
       setAvailableStores(stores);
       setAvailableCategories(categories);
       setAvailableManagers(meta.managers || []);
+      setRawStores(meta.stores || []);
+      setRawCategories(meta.categories || []);
       setIsBackendOnline(true);
     } catch {
       // Fallback from mock data
@@ -80,11 +123,27 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
       setAvailableStores(stores);
       setAvailableCategories(categories);
       setAvailableManagers([]);
+      setRawStores([
+        { storeId: 1, storeNumber: 'ST-1010', storeName: 'Downtown Flagship' },
+        { storeId: 2, storeNumber: 'ST-1020', storeName: 'Metro Mall Annex' },
+        { storeId: 3, storeNumber: 'ST-1030', storeName: 'Westside Galleria' },
+        { storeId: 4, storeNumber: 'ST-1040', storeName: 'Suburban Express' },
+        { storeId: 5, storeNumber: 'ST-1050', storeName: 'Airport Terminal 3' },
+      ]);
+      setRawCategories([
+        { categoryId: 1, categoryName: 'Equipment' },
+        { categoryId: 2, categoryName: 'Staffing' },
+        { categoryId: 3, categoryName: 'Inventory' },
+        { categoryId: 4, categoryName: 'Cleanliness' },
+        { categoryId: 5, categoryName: 'IT/POS' },
+        { categoryId: 6, categoryName: 'Safety' },
+        { categoryId: 7, categoryName: 'Customer' },
+      ]);
       setIsBackendOnline(false);
     }
   }, []);
 
-  // Load Issues & Metrics
+  // Load Issues & Metrics (Phase 8: summary metrics recompute when filters change)
   const loadIssuesAndMetrics = useCallback(async () => {
     setIsLoading(true);
     try {
@@ -95,8 +154,14 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
           priority: filters.priority,
           status: filters.status,
           search: filters.searchQuery,
+          followUp: filters.followUp,
         }),
-        fetchMetrics(),
+        // Pass filter dimensions so tiles recompute for active store/category/search
+        fetchMetrics({
+          store: filters.store,
+          category: filters.category,
+          search: filters.searchQuery,
+        }),
       ]);
 
       setIssues(fetchedIssues);
@@ -111,7 +176,13 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
         const matchesStore = filters.store === 'All' || issue.storeNumber === filters.store;
         const matchesCategory = filters.category === 'All' || issue.category === filters.category;
         const matchesPriority = filters.priority === 'All' || issue.priority === filters.priority;
-        const matchesStatus = filters.status === 'All' || issue.status === filters.status;
+        const matchesStatus =
+          filters.status === 'All'
+            ? true
+            : filters.status === 'New,In Progress'
+            ? issue.status !== 'Resolved'
+            : issue.status === filters.status;
+        const matchesFollowUp = !filters.followUp || (issue.requiresFollowUp && issue.status !== 'Resolved');
         const q = filters.searchQuery.trim().toLowerCase();
         const matchesSearch =
           q === '' ||
@@ -119,16 +190,24 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
           issue.storeName.toLowerCase().includes(q) ||
           issue.assignedManager.toLowerCase().includes(q);
 
-        return matchesStore && matchesCategory && matchesPriority && matchesStatus && matchesSearch;
+        return matchesStore && matchesCategory && matchesPriority && matchesStatus && matchesFollowUp && matchesSearch;
       });
 
       setIssues(filtered);
 
-      const totalOpen = INITIAL_ISSUES.filter((i) => i.status !== 'Resolved').length;
-      const highPriority = INITIAL_ISSUES.filter((i) => i.priority === 'High' && i.status !== 'Resolved').length;
+      const open = INITIAL_ISSUES.filter((i) => i.status !== 'Resolved').length;
+      const high_priority = INITIAL_ISSUES.filter((i) => i.priority === 'High' && i.status !== 'Resolved').length;
       const resolved = INITIAL_ISSUES.filter((i) => i.status === 'Resolved').length;
-      const requiresFollowUp = INITIAL_ISSUES.filter((i) => i.requiresFollowUp && i.status !== 'Resolved').length;
-      setMetrics({ totalOpen, highPriority, resolved, requiresFollowUp });
+      const follow_up = INITIAL_ISSUES.filter((i) => i.requiresFollowUp && i.status !== 'Resolved').length;
+      setMetrics({
+        open,
+        high_priority,
+        resolved,
+        follow_up,
+        totalOpen: open,
+        highPriority: high_priority,
+        requiresFollowUp: follow_up,
+      });
     } finally {
       setIsLoading(false);
     }
@@ -184,19 +263,25 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
         setIssues((prev) => prev.map((i) => (i.id === issueId ? updatedIssue : i)));
         const updatedMetrics = await fetchMetrics();
         setMetrics(updatedMetrics);
+        showToast(`Status updated to ${newStatus}`, 'success');
       } catch (err) {
         console.error('Failed to update status on server:', err);
+        showToast('Failed to update status on server', 'error');
       }
+    } else {
+      showToast(`Status set to ${newStatus} (demo mode)`, 'success');
     }
   };
 
-  // Handle Add Note
-  const handleAddNote = async (issueId: string, noteText: string) => {
+  // Handle Add Management Note (Phase 7: 500-char limit, author resolution & persistence)
+  const handleAddNote = async (issueId: string, noteText: string, managerId?: number | null) => {
     if (!noteText.trim()) return;
 
-    const newNote: ManagementNote = {
-      id: `n-${Date.now()}`,
-      author: 'Current Manager',
+    const managerObj = managerId ? availableManagers.find((m) => m.managerId === managerId) : null;
+    const tempId = `n-temp-${Date.now()}`;
+    const optimisticNote: ManagementNote = {
+      id: tempId,
+      author: managerObj?.fullName || 'Store Manager',
       content: noteText.trim(),
       createdAt: new Date().toLocaleDateString('en-US', {
         month: 'short',
@@ -213,7 +298,7 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
         if (issue.id === issueId) {
           return {
             ...issue,
-            notes: [newNote, ...(issue.notes || [])],
+            notes: [optimisticNote, ...(issue.notes || [])],
           };
         }
         return issue;
@@ -223,19 +308,152 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
     // 2. Call backend API if online
     if (isBackendOnline) {
       try {
-        await addIssueNote(issueId, noteText.trim());
+        const persistedNote = await addIssueNote(issueId, noteText.trim(), managerId);
+        // Replace temp optimistic note with server persisted note
+        setIssues((prev) =>
+          prev.map((issue) => {
+            if (issue.id === issueId) {
+              return {
+                ...issue,
+                notes: [persistedNote, ...(issue.notes || []).filter((n) => n.id !== tempId)],
+              };
+            }
+            return issue;
+          })
+        );
+        showToast('Management note added', 'success');
       } catch (err) {
         console.error('Failed to add note to server:', err);
+        showToast('Failed to add note on server', 'error');
       }
+    } else {
+      showToast('Management note added (demo mode)', 'success');
     }
   };
 
-  const setFilter = (key: keyof IssueFilterState, value: string) => {
+  // Handle Delete Management Note (Phase 7 Optional)
+  const handleDeleteNote = async (issueId: string, noteId: string) => {
+    // 1. Optimistic delete in UI
+    setIssues((prev) =>
+      prev.map((issue) => {
+        if (issue.id === issueId) {
+          return {
+            ...issue,
+            notes: (issue.notes || []).filter((n) => n.id !== noteId),
+          };
+        }
+        return issue;
+      })
+    );
+
+    // 2. Call backend API if online
+    if (isBackendOnline && !noteId.startsWith('n-temp-')) {
+      try {
+        await deleteIssueNote(noteId);
+        showToast('Management note deleted', 'info');
+      } catch (err) {
+        console.error('Failed to delete note on server:', err);
+        showToast('Failed to delete note on server', 'error');
+      }
+    } else {
+      showToast('Management note deleted', 'info');
+    }
+  };
+
+  // Handle Create New Issue (Phase 9)
+  const handleCreateIssue = async (payload: {
+    storeId: number;
+    categoryId: number;
+    shortDescription: string;
+    detailedDescription?: string;
+    priority?: Priority;
+    assignedManagerId?: number | null;
+  }) => {
+    if (isBackendOnline) {
+      try {
+        const created = await createIssue(payload);
+        showToast(`Issue ${created.id} reported successfully`, 'success');
+        setIsCreateModalOpen(false);
+        await loadIssuesAndMetrics();
+      } catch (err) {
+        console.error('Failed to create issue on server:', err);
+        showToast('Failed to create issue on server', 'error');
+        throw err;
+      }
+    } else {
+      const storeObj = rawStores.find((s) => s.storeId === payload.storeId);
+      const catObj = rawCategories.find((c) => c.categoryId === payload.categoryId);
+      const mgrObj = availableManagers.find((m) => m.managerId === payload.assignedManagerId);
+
+      const newIssue: OperationalIssue = {
+        id: `ISS-${Date.now().toString().slice(-4)}`,
+        storeNumber: storeObj?.storeNumber || `Store #${payload.storeId}`,
+        storeName: storeObj?.storeName || 'Retail Store',
+        category: (catObj?.categoryName as any) || 'General',
+        shortDescription: payload.shortDescription,
+        detailedDescription: payload.detailedDescription,
+        dateReported: new Date().toISOString().split('T')[0],
+        priority: payload.priority || 'Medium',
+        status: 'New',
+        assignedManager: mgrObj?.fullName || 'Duty Manager',
+        requiresFollowUp: payload.priority === 'High',
+        notes: [],
+        statusHistory: [],
+      };
+
+      setIssues((prev) => [newIssue, ...prev]);
+      setIsCreateModalOpen(false);
+      showToast(`Issue ${newIssue.id} created (demo mode)`, 'success');
+    }
+  };
+
+  const setFilter = (key: keyof IssueFilterState, value: any) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
   };
 
   const resetFilters = () => {
     setFilters(defaultFilters);
+    showToast('Filters reset to default', 'info');
+  };
+
+  // Phase 8: Clickable tiles applying corresponding filter to table below
+  const toggleTileFilter = (tileType: 'open' | 'high_priority' | 'resolved' | 'follow_up') => {
+    setFilters((prev) => {
+      switch (tileType) {
+        case 'open':
+          return {
+            ...prev,
+            status: prev.status === 'New,In Progress' ? 'All' : 'New,In Progress',
+            priority: 'All',
+            followUp: false,
+          };
+        case 'high_priority': {
+          const willBeActive = prev.priority !== 'High' || prev.status !== 'New,In Progress';
+          return {
+            ...prev,
+            priority: willBeActive ? 'High' : 'All',
+            status: willBeActive ? 'New,In Progress' : 'All',
+            followUp: false,
+          };
+        }
+        case 'resolved':
+          return {
+            ...prev,
+            status: prev.status === 'Resolved' ? 'All' : 'Resolved',
+            priority: 'All',
+            followUp: false,
+          };
+        case 'follow_up':
+          return {
+            ...prev,
+            followUp: !prev.followUp,
+            status: prev.followUp ? 'All' : 'In Progress',
+            priority: 'All',
+          };
+        default:
+          return prev;
+      }
+    });
   };
 
   const selectedIssue = useMemo(() => {
@@ -252,13 +470,22 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
         availableStores,
         availableCategories,
         availableManagers,
+        rawStores,
+        rawCategories,
         isLoading,
         isBackendOnline,
+        toast,
+        isCreateModalOpen,
+        setIsCreateModalOpen,
+        showToast,
         setSelectedIssueId,
         setFilter,
         resetFilters,
+        toggleTileFilter,
         handleStatusChange,
         handleAddNote,
+        handleDeleteNote,
+        handleCreateIssue,
         refresh: loadIssuesAndMetrics,
       }}
     >

@@ -689,10 +689,6 @@
     max-height: calc(var(--spacing) * 48);
   }
 
-  .max-h-\[90vh\] {
-    max-height: 90vh;
-  }
-
   .max-h-\[92vh\] {
     max-height: 92vh;
   }
@@ -903,12 +899,6 @@
     margin-block: 0;
   }
 
-  :where(.space-y-1 > :not(:last-child)) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(var(--spacing) * var(--tw-space-y-reverse));
-    margin-block-end: calc(var(--spacing) * calc(1 - var(--tw-space-y-reverse)));
-  }
-
   :where(.space-y-1\.5 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 1.5) * var(--tw-space-y-reverse));
@@ -919,12 +909,6 @@
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
-  }
-
-  :where(.space-y-2\.5 > :not(:last-child)) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(calc(var(--spacing) * 2.5) * var(--tw-space-y-reverse));
-    margin-block-end: calc(calc(var(--spacing) * 2.5) * calc(1 - var(--tw-space-y-reverse)));
   }
 
   :where(.space-y-3 > :not(:last-child)) {
@@ -1425,10 +1409,6 @@
     padding-right: var(--spacing);
   }
 
-  .pr-4 {
-    padding-right: calc(var(--spacing) * 4);
-  }
-
   .pr-8 {
     padding-right: calc(var(--spacing) * 8);
   }
@@ -1703,16 +1683,6 @@
   @supports (color: color-mix(in lab, red, red)) {
     .shadow-indigo-600\/20 {
       --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-indigo-600) 20%, transparent) var(--tw-shadow-alpha), transparent);
-    }
-  }
-
-  .shadow-rose-500\/5 {
-    --tw-shadow-color: #ff23570d;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .shadow-rose-500\/5 {
-      --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-rose-500) 5%, transparent) var(--tw-shadow-alpha), transparent);
     }
   }
 
@@ -2081,16 +2051,6 @@
 
     .dark\:border-slate-800 {
       border-color: var(--color-slate-800);
-    }
-
-    .dark\:border-slate-800\/60 {
-      border-color: #1d293d99;
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .dark\:border-slate-800\/60 {
-        border-color: color-mix(in oklab, var(--color-slate-800) 60%, transparent);
-      }
     }
 
     .dark\:bg-amber-950\/30 {

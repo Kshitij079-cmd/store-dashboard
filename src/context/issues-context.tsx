@@ -79,6 +79,15 @@ const defaultMetrics: DashboardMetrics = {
   requiresFollowUp: 0,
 };
 
+const DEFAULT_MANAGERS = [
+  { managerId: 1, fullName: 'Sarah Jenkins (Duty Manager)' },
+  { managerId: 2, fullName: 'Marcus Vance (Store Manager)' },
+  { managerId: 3, fullName: 'Priya Sharma (Area Lead)' },
+  { managerId: 4, fullName: 'Alex Rivera (Duty Manager)' },
+  { managerId: 5, fullName: 'Emily Chen (Operations Manager)' },
+  { managerId: 6, fullName: 'David Chen (Facility Tech Lead)' },
+];
+
 const IssuesContext = createContext<IssuesContextType | undefined>(undefined);
 
 export function IssuesProvider({ children }: { children: React.ReactNode }) {
@@ -88,7 +97,7 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
   const [selectedIssueId, setSelectedIssueId] = useState<string | null>(null);
   const [availableStores, setAvailableStores] = useState<string[]>(['All']);
   const [availableCategories, setAvailableCategories] = useState<string[]>(['All']);
-  const [availableManagers, setAvailableManagers] = useState<Array<{ managerId: number; fullName: string }>>([]);
+  const [availableManagers, setAvailableManagers] = useState<Array<{ managerId: number; fullName: string }>>(DEFAULT_MANAGERS);
   const [rawStores, setRawStores] = useState<Array<{ storeId: number; storeNumber: string; storeName: string }>>([]);
   const [rawCategories, setRawCategories] = useState<Array<{ categoryId: number; categoryName: string }>>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -112,7 +121,7 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
       const categories = ['All', ...meta.categories.map((c) => c.categoryName)];
       setAvailableStores(stores);
       setAvailableCategories(categories);
-      setAvailableManagers(meta.managers || []);
+      setAvailableManagers(meta.managers && meta.managers.length > 0 ? meta.managers : DEFAULT_MANAGERS);
       setRawStores(meta.stores || []);
       setRawCategories(meta.categories || []);
       setIsBackendOnline(true);
@@ -122,7 +131,7 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
       const categories = ['All', ...Array.from(new Set(INITIAL_ISSUES.map((i) => i.category))).sort()];
       setAvailableStores(stores);
       setAvailableCategories(categories);
-      setAvailableManagers([]);
+      setAvailableManagers(DEFAULT_MANAGERS);
       setRawStores([
         { storeId: 1, storeNumber: 'ST-1010', storeName: 'Downtown Flagship' },
         { storeId: 2, storeNumber: 'ST-1020', storeName: 'Metro Mall Annex' },
@@ -383,7 +392,9 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
     } else {
       const storeObj = rawStores.find((s) => s.storeId === payload.storeId);
       const catObj = rawCategories.find((c) => c.categoryId === payload.categoryId);
-      const mgrObj = availableManagers.find((m) => m.managerId === payload.assignedManagerId);
+      const mgrObj = payload.assignedManagerId
+        ? availableManagers.find((m) => m.managerId === payload.assignedManagerId)
+        : null;
 
       const newIssue: OperationalIssue = {
         id: `ISS-${Date.now().toString().slice(-4)}`,
@@ -395,7 +406,8 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
         dateReported: new Date().toISOString().split('T')[0],
         priority: payload.priority || 'Medium',
         status: 'New',
-        assignedManager: mgrObj?.fullName || 'Duty Manager',
+        assignedManager: mgrObj ? mgrObj.fullName : 'Unassigned',
+        assignedManagerId: payload.assignedManagerId ?? null,
         requiresFollowUp: payload.priority === 'High',
         notes: [],
         statusHistory: [],

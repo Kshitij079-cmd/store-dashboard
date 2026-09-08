@@ -79,6 +79,7 @@ export function CreateIssueModal() {
       setShortDescription('');
       setDetailedDescription('');
       setPriority('Medium');
+      setAssignedManagerId(null);
       setIsCreateModalOpen(false);
     } catch (err: any) {
       setErrorMessage(err.message || 'Failed to submit issue. Please try again.');

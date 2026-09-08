@@ -1,6 +1,8 @@
 import { OperationalIssue, Status, Priority, DashboardMetrics, ManagementNote } from '@/types/issues';
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5001';
+const BACKEND_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL ||
+  (typeof window !== 'undefined' ? '' : 'http://127.0.0.1:5001');
 
 // Convert backend Prisma issue to frontend OperationalIssue format
 export function transformBackendIssue(item: any): OperationalIssue {

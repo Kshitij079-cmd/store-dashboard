@@ -234,6 +234,10 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
 
   // Handle Status Update (Phase 6: Status Management & History)
   const handleStatusChange = async (issueId: string, newStatus: Status, changedBy?: number | null) => {
+    // 0. State Snapshot: capture pre-mutation state for rollback
+    const previousIssues = issues;
+    const previousMetrics = metrics;
+
     // 1. Optimistic update in UI
     setIssues((prev) =>
       prev.map((issue) => {
@@ -277,7 +281,10 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
         showToast(`Status updated to ${newStatus}`, 'success');
       } catch (err) {
         console.error('Failed to update status on server:', err);
-        showToast('Failed to update status on server', 'error');
+        // ROLLBACK: Revert UI state and metrics to pre-mutation snapshot
+        setIssues(previousIssues);
+        setMetrics(previousMetrics);
+        showToast('Server update failed. Status change rolled back.', 'error');
       }
     } else {
       showToast(`Status set to ${newStatus} (demo mode)`, 'success');
@@ -335,7 +342,19 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
         showToast('Management note added', 'success');
       } catch (err) {
         console.error('Failed to add note to server:', err);
-        showToast('Failed to add note on server', 'error');
+        // ROLLBACK: Filter out optimistic temporary note on server failure
+        setIssues((prev) =>
+          prev.map((issue) => {
+            if (issue.id === issueId) {
+              return {
+                ...issue,
+                notes: (issue.notes || []).filter((n) => n.id !== tempId),
+              };
+            }
+            return issue;
+          })
+        );
+        showToast('Failed to save note to server. Optimistic note discarded.', 'error');
       }
     } else {
       showToast('Management note added (demo mode)', 'success');
@@ -344,6 +363,9 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
 
   // Handle Delete Management Note (Phase 7 Optional)
   const handleDeleteNote = async (issueId: string, noteId: string) => {
+    // 0. State Snapshot: capture pre-deletion state for rollback
+    const previousIssues = issues;
+
     // 1. Optimistic delete in UI
     setIssues((prev) =>
       prev.map((issue) => {
@@ -364,7 +386,9 @@ export function IssuesProvider({ children }: { children: React.ReactNode }) {
         showToast('Management note deleted', 'info');
       } catch (err) {
         console.error('Failed to delete note on server:', err);
-        showToast('Failed to delete note on server', 'error');
+        // ROLLBACK: Restore previous issues state
+        setIssues(previousIssues);
+        showToast('Failed to delete note on server. Action undone.', 'error');
       }
     } else {
       showToast('Management note deleted', 'info');

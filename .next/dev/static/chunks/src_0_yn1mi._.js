@@ -4007,27 +4007,35 @@ const defaultMetrics = {
 const DEFAULT_MANAGERS = [
     {
         managerId: 1,
-        fullName: 'Sarah Jenkins (Duty Manager)'
+        fullName: 'Rohan Sharma (Duty Manager)'
     },
     {
         managerId: 2,
-        fullName: 'Marcus Vance (Store Manager)'
+        fullName: 'Ananya Verma (Duty Manager)'
     },
     {
         managerId: 3,
-        fullName: 'Priya Sharma (Area Lead)'
+        fullName: 'Kabir Mehta (Duty Manager)'
     },
     {
         managerId: 4,
-        fullName: 'Alex Rivera (Duty Manager)'
+        fullName: 'Sarah Jenkins (Duty Manager)'
     },
     {
         managerId: 5,
-        fullName: 'Emily Chen (Operations Manager)'
+        fullName: 'Marcus Vance (Store Manager)'
     },
     {
         managerId: 6,
-        fullName: 'David Chen (Facility Tech Lead)'
+        fullName: 'Priya Sharma (Area Lead)'
+    },
+    {
+        managerId: 7,
+        fullName: 'Alex Rivera (Duty Manager)'
+    },
+    {
+        managerId: 8,
+        fullName: 'Emily Chen (Operations Manager)'
     }
 ];
 const IssuesContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"])(undefined);
@@ -4253,6 +4261,9 @@ function IssuesProvider({ children }) {
     ]);
     // Handle Status Update (Phase 6: Status Management & History)
     const handleStatusChange = async (issueId, newStatus, changedBy)=>{
+        // 0. State Snapshot: capture pre-mutation state for rollback
+        const previousIssues = issues;
+        const previousMetrics = metrics;
         // 1. Optimistic update in UI
         setIssues((prev)=>prev.map((issue)=>{
                 if (issue.id === issueId) {
@@ -4295,7 +4306,10 @@ function IssuesProvider({ children }) {
                 showToast(`Status updated to ${newStatus}`, 'success');
             } catch (err) {
                 console.error('Failed to update status on server:', err);
-                showToast('Failed to update status on server', 'error');
+                // ROLLBACK: Revert UI state and metrics to pre-mutation snapshot
+                setIssues(previousIssues);
+                setMetrics(previousMetrics);
+                showToast('Server update failed. Status change rolled back.', 'error');
             }
         } else {
             showToast(`Status set to ${newStatus} (demo mode)`, 'success');
@@ -4351,7 +4365,17 @@ function IssuesProvider({ children }) {
                 showToast('Management note added', 'success');
             } catch (err) {
                 console.error('Failed to add note to server:', err);
-                showToast('Failed to add note on server', 'error');
+                // ROLLBACK: Filter out optimistic temporary note on server failure
+                setIssues((prev)=>prev.map((issue)=>{
+                        if (issue.id === issueId) {
+                            return {
+                                ...issue,
+                                notes: (issue.notes || []).filter((n)=>n.id !== tempId)
+                            };
+                        }
+                        return issue;
+                    }));
+                showToast('Failed to save note to server. Optimistic note discarded.', 'error');
             }
         } else {
             showToast('Management note added (demo mode)', 'success');
@@ -4359,6 +4383,8 @@ function IssuesProvider({ children }) {
     };
     // Handle Delete Management Note (Phase 7 Optional)
     const handleDeleteNote = async (issueId, noteId)=>{
+        // 0. State Snapshot: capture pre-deletion state for rollback
+        const previousIssues = issues;
         // 1. Optimistic delete in UI
         setIssues((prev)=>prev.map((issue)=>{
                 if (issue.id === issueId) {
@@ -4376,7 +4402,9 @@ function IssuesProvider({ children }) {
                 showToast('Management note deleted', 'info');
             } catch (err) {
                 console.error('Failed to delete note on server:', err);
-                showToast('Failed to delete note on server', 'error');
+                // ROLLBACK: Restore previous issues state
+                setIssues(previousIssues);
+                showToast('Failed to delete note on server. Action undone.', 'error');
             }
         } else {
             showToast('Management note deleted', 'info');
@@ -4513,7 +4541,7 @@ function IssuesProvider({ children }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/src/context/issues-context.tsx",
-        lineNumber: 476,
+        lineNumber: 502,
         columnNumber: 5
     }, this);
 }
